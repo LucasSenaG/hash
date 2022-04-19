@@ -1,8 +1,13 @@
 body {
-    background-color: #AAA;
+    background-image: linear-gradient(to bottom, #222670, #484FF0);
     text-align: center;
     font-family: Verdana, Helvetica, sans-serif;
     font-size: 1.3em;
+    
+}
+
+body, html{
+    height: 100%;
 }
 
 input {
@@ -19,7 +24,7 @@ input {
 }
 
 #reiniciar {
-    margin-top: 2%;
+    margin-top: 15%;
     width: 10vw;
     height:6vw;
     font-size: 1em;
@@ -27,27 +32,45 @@ input {
 }
 
 #empate {
-    width: 500px;
-    height: 350px;
-    background-color: gray;
+    width: 550px;
+    height: 100px;
+    background-color: #F08D60;
     color: white;
     border: 5px #000;
     position: absolute;
-     top: 50%;
+     top: 12%;
      left: 50%;
      transform: translate(-50%, -50%);
     display: none;
+    text-transform: uppercase;
 }
 
 #vitoria {
-    width: 500px;
-    height: 350px;
-    background-color: gray;
+    width: 550px;
+    height: 100px;
+    background-color: #69F030;
     color: white;
     border: 5px #000;
     position: absolute;
-     top: 50%;
+     top: 12%;
      left: 50%;
      transform: translate(-50%, -50%);
     display: none;
+    text-transform: uppercase;
 }
+
+.placar {
+    background-color: #745F8A;
+    opacity: 0.9;
+    height: 500px;
+}
+
+.placar button {
+    margin-top: 90px;
+}
+
+body h1 {
+    color: rgb(230, 228, 228);
+    text-transform: uppercase;
+}
+

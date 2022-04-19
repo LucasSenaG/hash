@@ -3,10 +3,18 @@ const label_jogador = document.querySelector('#jogador');
 const label_vencedor = document.querySelector('#vencedor');
 const m_empate = document.querySelector('#empate');
 const m_vitoria = document.querySelector('#vitoria');
+const n_empates = document.querySelectorAll('.empates');
+const n_vitorias_x = document.querySelectorAll('.vitorias_x');
+const n_vitorias_o = document.querySelectorAll('.vitorias_o');
+
 
 var jogador = "_";
 var vencedor = "_";
 var rodada = 0;
+var vitorias_x = 0;
+var vitorias_o = 0;
+var empates = 0;
+
 
 sortearJogador();
 
@@ -23,10 +31,23 @@ for(var i=0;i<9;i++) {
 
             if(vencedor!='_') {
                 m_vitoria.style.display = "block";
-                label_jogador.innerText=`${vencedor} venceu!`;
-                label_vencedor.innerText=`${vencedor} venceu!`;
+                label_jogador.innerText=` '${vencedor}' venceu!`;
+                label_vencedor.innerText=` '${vencedor}'  venceu!`;
+
+                if(vencedor == 'O'){
+                    vitorias_o++;
+                    n_vitorias_o[0].innerText =` ${vitorias_o}`;
+                    n_vitorias_o[1].innerText =` ${vitorias_o}`;
+                } else {
+                    vitorias_x++;
+                    n_vitorias_x[0].innerText =` ${vitorias_x}`;
+                    n_vitorias_x[1].innerText =` ${vitorias_x}`;
+                }
             }else if (vencedor == '_' && rodada == 9){
                 m_empate.style.display = "block";
+                empates++;
+                n_empates[0].innerText =` ${empates}`;
+                n_empates[1].innerText =` ${empates}`;
             }
         }
     });
@@ -50,11 +71,9 @@ function sortearJogador () {
     if(Math.floor(Math.random() * 2)==0) {
         jogador = "O";
         label_jogador.innerText="O"; 
-        label_jogador.style.color='#F00'; 
     }else{
         jogador = "X";
         label_jogador.innerText="X";
-        label_jogador.style.color='#00F';
     }
 }
 
@@ -62,12 +81,10 @@ function trocarJogador() {
     if(jogador=='X') {
         jogador='O';
         label_jogador.innerText='O';
-        label_jogador.style.color='#F00';
     
     }else{
         jogador='X';
         label_jogador.innerText='X';
-        label_jogador.style.color='#00F';
     }
 }
 
@@ -130,3 +147,5 @@ function vitoria() {
 
     return '_';
 }
+
+console.log(n_empates, n_vitorias_o, n_vitorias_x);
