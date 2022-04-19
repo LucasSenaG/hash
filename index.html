@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Jogo da velha</title>
+</head>
+<body>
+    
+    <h1>Jogador <span id='jogador'></span></h1>
+    <main>
+        <div><input type="button" value="_"><input type="button" value="_"><input type="button" value="_"></div>
+        <div><input type="button" value="_"><input type="button" value="_"><input type="button" value="_"></div>
+        <div><input type="button" value="_"><input type="button" value="_"><input type="button" value="_"></div>
+    </main>
+
+    <div id="empate">
+        <h2>EMPATE!</h2>
+        <input type="button" value="Reiniciar" id="reiniciar" onclick="reiniciar()">
+    </div>
+    
+    <div id="vitoria">
+        <h2><span id='vencedor'></span></h2>
+        <input type="button" value="Reiniciar" id="reiniciar" onclick="reiniciar()">
+    </div> 
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
